@@ -13,6 +13,7 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
+header('Content-Type: application/json');
 while ( have_posts() ) : the_post(); ?>				
 <?php the_content(); ?>
 <?php endwhile; // end of the loop. ?>

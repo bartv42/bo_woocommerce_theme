@@ -31,6 +31,7 @@ get_header(); ?>
 			<?php else: ?>
 		
 				<?php
+/*				
 					woocommerce_login_form(
 						array(
 							'message'  => __( 'If you have shopped with us before, please enter your details in the boxes below. If you are a new customer please proceed to the Billing &amp; Shipping section.', 'woocommerce' ),
@@ -38,6 +39,26 @@ get_header(); ?>
 				//			'hidden'   => false
 						)
 					);
+*/
+
+					$args = array(
+				        'echo'           => true,
+				        'redirect'       => get_permalink( wc_get_page_id( 'checkout' ) ), 
+				        'form_id'        => 'loginform',
+				        'label_username' => __( 'Username' ),
+				        'label_password' => __( 'Password' ),
+				        'label_remember' => __( 'Remember Me' ),
+				        'label_log_in'   => __( 'Log In' ),
+				        'id_username'    => 'user_login',
+				        'id_password'    => 'user_pass',
+				        'id_remember'    => 'rememberme',
+				        'id_submit'      => 'wp-submit',
+				        'remember'       => true,
+				        'value_username' => NULL,
+				        'value_remember' => false
+					); 
+					
+					wp_login_form( $args );				
 				?>				
 				
 			<?php endif ?>

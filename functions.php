@@ -49,5 +49,14 @@ function bo_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'bo_body_class' );	
-	
+
+
+
+/* http://wordpress.org/support/topic/add-to-cart-not-showing-for-variable-product
+function fix_woo_var_cart()
+{
+  wp_enqueue_script('add-to-cart-variation', '/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.js',array('jquery'),'1.0',true);
+}
+add_action('wp_enqueue_scripts','fix_woo_var_cart');
+*/	
 ?>
